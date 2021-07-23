@@ -1,0 +1,26 @@
+# Comments:
+# 
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+        - name:  python-app
+          image: pim88z/python-app:latest
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8086
+            hostPort: 8086
