@@ -8,8 +8,10 @@ spec:
     name: python-app
   ports:
     - port: 8086
-  externalTrafficPolicy: Cluster
+      targetPort: 8086
+      nodePort: 32767
+  #externalTrafficPolicy: Cluster
   # loadBalancerSourceRanges:
-  # - 145.58.210.14/32
+  #  - 35.244.218.25/32
   #clusterIP: 10.60.0.1 
   
